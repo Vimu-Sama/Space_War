@@ -11,7 +11,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float bottom_padding = 0f;
     [SerializeField] float left_padding = 0f;
     [SerializeField] float right_padding = 0f;
-
+    [SerializeField] GameObject bullet;
+    [SerializeField] GameObject bullet_pos;
     Vector2 lower_limit, upper_limit;
 
     private void Start()
@@ -39,4 +40,16 @@ public class PlayerController : MonoBehaviour
     {
         inpuut= value.Get<Vector2>();
     }
+
+
+    void OnFire(InputValue value)
+    {
+        //Debug.Log(bullet_pos.transform);
+        if(value.isPressed)
+        {
+
+            Instantiate(bullet, new Vector3(transform.position.x, transform.position.y+1,transform.position.z), Quaternion.identity);
+        }
+    }
+
 }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8659750750127031074}
   - component: {fileID: 8659750750127031077}
   - component: {fileID: 8659750750127031076}
+  - component: {fileID: 1166738602}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 8659750750127031079}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.06371659, y: -0.91947913, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -139,3 +140,16 @@ PolygonCollider2D:
       - {x: -0.074999996, y: -0.38}
       - {x: 0.02978693, y: -0.37090486}
       - {x: 0.06882954, y: -0.36946884}
+--- !u!114 &1166738602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8659750750127031079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 821fd643e7ae1f5459fc7e49a556425c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wave_config: {fileID: 11400000, guid: e6bf2966d4150f44386121ce54b5732f, type: 2}
