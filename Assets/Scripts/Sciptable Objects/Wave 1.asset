@@ -12,5 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5154b9717c07244449a0c6dfd1847269, type: 3}
   m_Name: Wave 1
   m_EditorClassIdentifier: 
+  enemy_prefabs:
+  - {fileID: 535531556947177526, guid: a3c7acc808a976a45a74e5cbfb9b824f, type: 3}
+  - {fileID: 535531556947177526, guid: a3c7acc808a976a45a74e5cbfb9b824f, type: 3}
+  - {fileID: 535531556947177526, guid: a3c7acc808a976a45a74e5cbfb9b824f, type: 3}
+  - {fileID: 535531556947177526, guid: a3c7acc808a976a45a74e5cbfb9b824f, type: 3}
+  - {fileID: 535531556947177526, guid: a3c7acc808a976a45a74e5cbfb9b824f, type: 3}
+  - {fileID: 535531556947177526, guid: a3c7acc808a976a45a74e5cbfb9b824f, type: 3}
+  - {fileID: 535531556947177526, guid: a3c7acc808a976a45a74e5cbfb9b824f, type: 3}
+  - {fileID: 535531556947177526, guid: a3c7acc808a976a45a74e5cbfb9b824f, type: 3}
+  - {fileID: 535531556947177526, guid: a3c7acc808a976a45a74e5cbfb9b824f, type: 3}
+  - {fileID: 535531556947177526, guid: a3c7acc808a976a45a74e5cbfb9b824f, type: 3}
   waypoint_prefabs: {fileID: 6085148611246617485, guid: ecbca9365c3e01140902288933406f02, type: 3}
   movespeed: 10
+  spawningTimeDifference: 0.5

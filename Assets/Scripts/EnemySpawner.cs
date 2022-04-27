@@ -5,8 +5,8 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
 
-    [SerializeField] GetWaypoints _getWayPoints;
-
+    [SerializeField] List<GetWaypoints> _getWayPoints= new List<GetWaypoints>();
+    [SerializeField] float spawnWavesTimeDifference = 0f;
     private void Start()
     {
         StartCoroutine(SpawnEnemies());
@@ -14,11 +14,21 @@ public class EnemySpawner : MonoBehaviour
 
     IEnumerator SpawnEnemies()
     {
-        int n = _getWayPoints.GetEnemyCount();
-        for(int i=0;i<n;i++)
+        //do
         {
-            Instantiate(_getWayPoints.GetEnemyPrefab(i), transform.position, Quaternion.identity, transform);
-            yield return new WaitForSeconds(_getWayPoints.spawningTimeDifference) ;
-        }
+            int n = _getWayPoints.Count;
+            for (int i = 0; i < n; i++)
+            {
+                int m = _getWayPoints[i].GetEnemyCount();
+                for (int j = 0; j < m; j++)
+                {
+                    Instantiate(_getWayPoints[i].GetEnemyPrefab(i), transform.position, Quaternion.identity, transform);
+                    yield return new WaitForSeconds(_getWayPoints[i].spawningTimeDifference);
+                }
+                yield return new WaitForSeconds(spawnWavesTimeDifference);
+            }
+
+        } //while (true);
+        
     }
 }

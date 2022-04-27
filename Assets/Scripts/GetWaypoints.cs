@@ -9,6 +9,7 @@ public class GetWaypoints : ScriptableObject
     [SerializeField] Transform waypoint_prefabs;
     [SerializeField] float movespeed=1f;
     public float spawningTimeDifference = 0f;
+    
     public int GetEnemyCount()
     {
         return enemy_prefabs.Count;
