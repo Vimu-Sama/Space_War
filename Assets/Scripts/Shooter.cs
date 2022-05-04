@@ -6,6 +6,9 @@ public class Shooter : MonoBehaviour
 {
     public bool isFiring ;
     [SerializeField] GameObject bullet;
+    [SerializeField] float bulletSpeed = 10f ;
+    [SerializeField] float bulletLife = 5f;
+    [SerializeField] float fireRate = 0.2f;
     Coroutine fireCoroutine;
 
 
@@ -13,16 +16,18 @@ public class Shooter : MonoBehaviour
     private void Update()
     {
         Fire();
+        //Debug.Log(isFiring);
     }
     void Fire()
     {
-        if(isFiring)
+        if(isFiring && fireCoroutine==null)
         {
             fireCoroutine= StartCoroutine(ContinuousFire()) ;
         }
-        else
+        else if(!isFiring && fireCoroutine!=null)
         {
             StopCoroutine(fireCoroutine);
+            fireCoroutine = null;
         }
     }
 
@@ -30,7 +35,14 @@ public class Shooter : MonoBehaviour
     {
         while(true)
         {
-            Instantiate(gameObject, transform);
+            GameObject instance= Instantiate(bullet, transform.position, Quaternion.identity);
+            Rigidbody2D rb= instance.GetComponent<Rigidbody2D>();   
+            if(rb!=null)
+            {
+                rb.velocity = new Vector3(0f, bulletSpeed, 0f);
+            }
+            Destroy(instance, bulletLife);
+            yield return new WaitForSeconds(fireRate);
         }
     }
 

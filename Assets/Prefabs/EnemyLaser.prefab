@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 8544216297165858845}
   - component: {fileID: 4377449374683277726}
   - component: {fileID: 1695518787231686647}
-  - component: {fileID: 1255504251}
   - component: {fileID: -3969520731619368852}
+  - component: {fileID: 6464789379160606980}
   m_Layer: 8
   m_Name: EnemyLaser
   m_TagString: Untagged
@@ -103,19 +103,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.09320579, y: 0.36220828}
   m_Direction: 0
---- !u!114 &1255504251
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1326968956120835788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb437b7f4744a743a947c31fdb64f1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  move_speed: 10
 --- !u!114 &-3969520731619368852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,3 +116,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+--- !u!50 &6464789379160606980
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326968956120835788}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

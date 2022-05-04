@@ -51,8 +51,11 @@ public class PlayerController : MonoBehaviour
 
             Instantiate(bullet, new Vector3(transform.position.x, transform.position.y+1,transform.position.z), Quaternion.identity);
         }*/
-        shooter.isFiring = value.isPressed;
-
+        if (shooter != null)
+        {
+            shooter.isFiring = value.isPressed;
+        }
+        
     }
 
 }
