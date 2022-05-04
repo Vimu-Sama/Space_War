@@ -33,7 +33,7 @@ public class Shooter : MonoBehaviour
         else if(!isFiring && fireCoroutine!=null)
         {
             StopCoroutine(fireCoroutine);
-            Debug.Log("its working");
+            //Debug.Log("its working");
             fireCoroutine = null;
         }
     }
