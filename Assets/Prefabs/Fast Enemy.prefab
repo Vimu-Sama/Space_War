@@ -7,10 +7,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4743942138482611598, guid: c845128c7b244614db3f5dc7651fd30b, type: 3}
+      propertyPath: health
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1166738602, guid: c845128c7b244614db3f5dc7651fd30b, type: 3}
       propertyPath: wave_config
       value: 
       objectReference: {fileID: 11400000, guid: 75ab4749f9398964b943457c9768eff7, type: 2}
+    - target: {fileID: 6332563088372758480, guid: c845128c7b244614db3f5dc7651fd30b, type: 3}
+      propertyPath: damage
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 8659750750127031074, guid: c845128c7b244614db3f5dc7651fd30b, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -275,5 +283,24 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fast Enemy
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -4743942138482611598, guid: c845128c7b244614db3f5dc7651fd30b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c845128c7b244614db3f5dc7651fd30b, type: 3}
+--- !u!1 &535531556947177526 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8659750750127031079, guid: c845128c7b244614db3f5dc7651fd30b, type: 3}
+  m_PrefabInstance: {fileID: 9170184742701085457}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-7558472024472775949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535531556947177526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7c82236b1bd09d479f3b441884ca759, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10

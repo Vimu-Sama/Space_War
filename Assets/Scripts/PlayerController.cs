@@ -11,10 +11,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float bottom_padding = 0f;
     [SerializeField] float left_padding = 0f;
     [SerializeField] float right_padding = 0f;
-    [SerializeField] GameObject bullet;
-    [SerializeField] GameObject bullet_pos;
+    //[SerializeField] GameObject bullet;
+    //[SerializeField] GameObject bullet_pos;
     Vector2 lower_limit, upper_limit;
-
+    Shooter shooter;
     private void Start()
     {
         set_bounds();
@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
         Vector2 newpos= new Vector2();
         newpos.x = Mathf.Clamp(transform.position.x+ delta.x, lower_limit.x + left_padding, upper_limit.x - right_padding);
         newpos.y = Mathf.Clamp(transform.position.y + delta.y, lower_limit.y + bottom_padding, upper_limit.y - top_padding);
+        shooter = GetComponent<Shooter>();
         transform.position = newpos  ;
     }
     
@@ -45,11 +46,13 @@ public class PlayerController : MonoBehaviour
     void OnFire(InputValue value)
     {
         //Debug.Log(bullet_pos.transform);
-        if(value.isPressed)
+        /*if(value.isPressed)
         {
 
             Instantiate(bullet, new Vector3(transform.position.x, transform.position.y+1,transform.position.z), Quaternion.identity);
-        }
+        }*/
+        shooter.isFiring = value.isPressed;
+
     }
 
 }
