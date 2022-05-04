@@ -10,9 +10,15 @@ public class Shooter : MonoBehaviour
     [SerializeField] float bulletLife = 5f;
     [SerializeField] float fireRate = 0.2f;
     Coroutine fireCoroutine;
+    [SerializeField] bool isAI;
 
-
-
+    private void Start()
+    {
+        if(isAI==true)
+        {
+            isFiring = true;
+        }
+    }
     private void Update()
     {
         Fire();
@@ -27,6 +33,7 @@ public class Shooter : MonoBehaviour
         else if(!isFiring && fireCoroutine!=null)
         {
             StopCoroutine(fireCoroutine);
+            Debug.Log("its working");
             fireCoroutine = null;
         }
     }
@@ -42,7 +49,15 @@ public class Shooter : MonoBehaviour
                 rb.velocity = new Vector3(0f, bulletSpeed, 0f);
             }
             Destroy(instance, bulletLife);
-            yield return new WaitForSeconds(fireRate);
+            if(isAI)
+            {
+                yield return new WaitForSeconds(Random.Range(1f,fireRate));
+            }
+            else
+            {
+                yield return new WaitForSeconds(fireRate);
+            }
+            
         }
     }
 

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -3707801043747006842}
   - component: {fileID: 6332563088372758480}
   - component: {fileID: -4743942138482611598}
+  - component: {fileID: -5096989472551263229}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Untagged
@@ -203,3 +204,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 20
+--- !u!114 &-5096989472551263229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8659750750127031079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e5501eb3ffca6446b44c9057637f963, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFiring: 0
+  bullet: {fileID: 1326968956120835788, guid: 7cb7b716747780440a95bd38b238150f, type: 3}
+  bulletSpeed: -10
+  bulletLife: 5
+  fireRate: 5
+  isAI: 1
