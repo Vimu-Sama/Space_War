@@ -6,6 +6,12 @@ public class Health : MonoBehaviour
 {
     public int health = 100;
     [SerializeField] ParticleSystem particleSystem;
+    CameraShake cameraShakeScript;
+
+    private void Start()
+    {
+        cameraShakeScript = FindObjectOfType<CameraShake>();
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -20,6 +26,10 @@ public class Health : MonoBehaviour
     
     void TakeDamage(int damageGiven)
     {
+        if(gameObject.tag == "Player")
+        {
+            cameraShakeScript.ShakeCamera();
+        }
         PlayEffect();
         if (health <= damageGiven)
         {
