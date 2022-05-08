@@ -283,6 +283,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fast Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 8659750750127031079, guid: c845128c7b244614db3f5dc7651fd30b, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -4743942138482611598, guid: c845128c7b244614db3f5dc7651fd30b, type: 3}
     - {fileID: -5096989472551263229, guid: c845128c7b244614db3f5dc7651fd30b, type: 3}
@@ -306,3 +310,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 10
   particleSystem: {fileID: 4815827561878000521, guid: 9343843504fd0204f9f0b9ac515ac39c, type: 3}
+--- !u!114 &-6477789793114891578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535531556947177526}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e5501eb3ffca6446b44c9057637f963, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFiring: 0
+  bullet: {fileID: 0}
+  bulletSpeed: 10
+  bulletLife: 5
+  fireRate: 0.2
+  isAI: 0

@@ -19,10 +19,24 @@ public class Damage : MonoBehaviour
 
     public void Hit()
     {
-        if(gameObject!=null)
+        if(gameObject!=null && tag!= "projectile")
         {
             health.PlayEffect();
+            AudioPlayer player = FindObjectOfType<AudioPlayer>();
+            player.PlaySoundFor("destroy", gameObject.layer);
+            GetComponent<SpriteRenderer>().enabled = false;
+            GetComponent<Shooter>().enabled = false;
+            GetComponent<PolygonCollider2D>().enabled = false;
+            StartCoroutine(DestroyForReal());
         }
+        
+        
+    }
+
+    IEnumerator DestroyForReal()
+    {
+        yield return new WaitForSeconds(2);
         Destroy(gameObject);
     }
+
 }

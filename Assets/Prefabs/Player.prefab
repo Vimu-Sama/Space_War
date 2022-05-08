@@ -257,7 +257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFiring: 0
   bullet: {fileID: 1326968956120835788, guid: dd3789245bfb7a14abb8f5a57bb7f1a5, type: 3}
-  bulletSpeed: 10
+  bulletSpeed: 15
   bulletLife: 5
   fireRate: 0.2
   isAI: 0

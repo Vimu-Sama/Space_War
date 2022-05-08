@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: -5096989472551263229}
   m_Layer: 8
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -205,6 +205,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 20
   particleSystem: {fileID: 4815827561878000521, guid: 9343843504fd0204f9f0b9ac515ac39c, type: 3}
+  scoreOnDestroy: 20
 --- !u!114 &-5096989472551263229
 MonoBehaviour:
   m_ObjectHideFlags: 0

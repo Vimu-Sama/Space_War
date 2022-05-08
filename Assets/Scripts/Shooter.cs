@@ -48,6 +48,7 @@ public class Shooter : MonoBehaviour
             {
                 rb.velocity = new Vector3(0f, bulletSpeed, 0f);
             }
+            PlaySound();
             Destroy(instance, bulletLife);
             if(isAI)
             {
@@ -59,6 +60,16 @@ public class Shooter : MonoBehaviour
             }
             
         }
+    }
+
+    void PlaySound()
+    {
+        AudioPlayer player= FindObjectOfType<AudioPlayer>();
+        if(player!=null)
+        {
+            player.PlaySoundFor("shoot", gameObject.layer);
+        }
+        
     }
 
 }

@@ -8,7 +8,8 @@ public class Laser : MonoBehaviour
     {
         if(collision.tag!= "projectile")
         {
-            gameObject.transform.localScale = new Vector3(0f, 0f, 0f);
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            GetComponent<CapsuleCollider2D>().enabled = false; 
             StartCoroutine(DestroyLater());
         }
     }
