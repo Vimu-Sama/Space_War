@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Health : MonoBehaviour
 {
     public int health = 100;
-    [SerializeField] ParticleSystem particleSystem;
+    [SerializeField] ParticleSystem particleSystem ;
     [SerializeField] int scoreOnDestroy= 10;
     CameraShake cameraShakeScript;
 
@@ -37,15 +37,14 @@ public class Health : MonoBehaviour
             health = 0;
             GetComponent<SpriteRenderer>().enabled = false;
             GetComponent<PolygonCollider2D>().enabled = false;
-            GetComponent<Shooter>().enabled = false;
+             //GetComponent<Shooter>().isFiring = false;
+            //GetComponent<Shooter>().enabled = false;
             AudioPlayer player = FindObjectOfType<AudioPlayer>();
             player.PlaySoundFor("destroy", gameObject.layer);
-
             ScoreKeeper scoreKeeper = FindObjectOfType<ScoreKeeper>();
             if(scoreKeeper!=null && tag!="Player")
             {
                 scoreKeeper.UpdateScore(scoreOnDestroy);
-                Debug.Log(scoreKeeper.GetScore());
             }
             
             StartCoroutine(DestroyForReal());
@@ -67,7 +66,9 @@ public class Health : MonoBehaviour
     IEnumerator DestroyForReal()
     {
         yield return new WaitForSeconds(2);
-        Destroy(gameObject);
+        //FindObjectOfType<SceneNavigation>().ChangeScene(2);
+        //yield return new WaitForSeconds(1);
+        Destroy(gameObject,1);
     }
 
 

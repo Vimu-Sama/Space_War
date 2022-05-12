@@ -22,7 +22,6 @@ public class Shooter : MonoBehaviour
     private void Update()
     {
         Fire();
-        //Debug.Log(isFiring);
     }
     void Fire()
     {
@@ -40,7 +39,7 @@ public class Shooter : MonoBehaviour
 
     IEnumerator ContinuousFire()
     {
-        while(true)
+        while(true && GetComponent<SpriteRenderer>().enabled== true)
         {
             GameObject instance= Instantiate(bullet, transform.position, Quaternion.identity);
             Rigidbody2D rb= instance.GetComponent<Rigidbody2D>();   

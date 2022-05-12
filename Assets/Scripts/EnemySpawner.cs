@@ -6,6 +6,7 @@ public class EnemySpawner : MonoBehaviour
 {
 
     [SerializeField] List<GetWaypoints> _getWayPoints= new List<GetWaypoints>();
+    [SerializeField] int maxWaveCount=1;
     [SerializeField] float spawnWavesTimeDifference = 0f;
     private void Start()
     {
@@ -14,9 +15,10 @@ public class EnemySpawner : MonoBehaviour
 
     IEnumerator SpawnEnemies()
     {
-        //do
+        do
         {
             int n = _getWayPoints.Count;
+            
             for (int i = 0; i < n; i++)
             {
                 int m = _getWayPoints[i].GetEnemyCount();
@@ -28,7 +30,7 @@ public class EnemySpawner : MonoBehaviour
                 yield return new WaitForSeconds(spawnWavesTimeDifference);
             }
 
-        } //while (true);
+        } while (true);
         
     }
 }
