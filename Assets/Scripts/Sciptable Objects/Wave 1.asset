@@ -24,5 +24,5 @@ MonoBehaviour:
   - {fileID: 535531556947177526, guid: a3c7acc808a976a45a74e5cbfb9b824f, type: 3}
   - {fileID: 535531556947177526, guid: a3c7acc808a976a45a74e5cbfb9b824f, type: 3}
   waypoint_prefabs: {fileID: 6085148611246617485, guid: ecbca9365c3e01140902288933406f02, type: 3}
-  movespeed: 10
-  spawningTimeDifference: 0.5
+  movespeed: 20
+  spawningTimeDifference: 0.2

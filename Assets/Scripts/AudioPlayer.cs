@@ -18,6 +18,20 @@ public class AudioPlayer : MonoBehaviour
     [SerializeField][Range(0f, 1f)] float enemyDestroyVolume=1f;
 
 
+
+    private void Awake()
+    {
+        int countOfInstances = FindObjectsOfType<AudioPlayer>().Length;
+        if(countOfInstances>1)
+        {
+            GetComponent<AudioPlayer>().enabled = false;
+            Destroy(gameObject);
+        }
+        else
+            DontDestroyOnLoad(gameObject);
+    }
+
+
     //7 -Player and 8-Enemy   --> Layer with name and index
     public void PlaySoundFor(string divider, int s)
     {

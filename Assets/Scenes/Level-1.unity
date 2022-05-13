@@ -346,6 +346,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e6bf2966d4150f44386121ce54b5732f, type: 2}
   - {fileID: 11400000, guid: 75ab4749f9398964b943457c9768eff7, type: 2}
   - {fileID: 11400000, guid: df3e4000b5ac5fa46a56575aa0c1324e, type: 2}
+  - {fileID: 11400000, guid: d665194b32458fb49ad5f10c79503d84, type: 2}
+  - {fileID: 11400000, guid: 93d065896d0682240ae0a63c87f7fa83, type: 2}
   maxWaveCount: 1
   spawnWavesTimeDifference: 4
 --- !u!4 &154636375
@@ -437,9 +439,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffd5b50e82f49f145b50758bdb480ae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyShootSound: {fileID: 8300000, guid: edd413abc2b1cd04cb5f3592ada91928, type: 3}
+  enemyShootSound: {fileID: 8300000, guid: 83182e247f236a248bfe1b8fa3973782, type: 3}
   playerShootSound: {fileID: 8300000, guid: 6b7ad9cc445f2034db38c3c178a391c4, type: 3}
-  shootVolume: 1
+  shootVolume: 0.319
   playerDestroySound: {fileID: 8300000, guid: 30a193f9f471ab64493d570968c1392a, type: 3}
   playerDestroyVolume: 1
   enemyDestroySound: {fileID: 8300000, guid: fe0d73020d7ab62409e2e9b6001ce5b8, type: 3}
@@ -640,7 +642,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22.6
+  m_fontSize: 22.55
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

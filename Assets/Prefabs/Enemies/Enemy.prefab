@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7c82236b1bd09d479f3b441884ca759, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 20
+  health: 40
   particleSystem: {fileID: 4815827561878000521, guid: 9343843504fd0204f9f0b9ac515ac39c, type: 3}
   scoreOnDestroy: 20
 --- !u!114 &-5096989472551263229
