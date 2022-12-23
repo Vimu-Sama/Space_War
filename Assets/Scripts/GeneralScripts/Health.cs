@@ -1,33 +1,37 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 public class Health : MonoBehaviour
 {
     public int health = 100;
-    [SerializeField] ParticleSystem particleSystem ;
-    [SerializeField] int scoreOnDestroy= 10;
-    CameraShake cameraShakeScript;
+    [SerializeField] private ParticleSystem particleSystem;
+    [SerializeField] private int scoreOnDestroy = 10;
+    private CameraShake cameraShakeScript;
+    private AudioPlayer audioPlayer;
+    private SpriteRenderer spriteRenderer;
+    private PolygonCollider2D polygonCollider;
 
     private void Start()
     {
         cameraShakeScript = FindObjectOfType<CameraShake>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        polygonCollider = GetComponent<PolygonCollider2D>();
+        audioPlayer = AudioPlayer.Instance;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         Damage damage = other.GetComponent<Damage>();
-        
-        if(damage != null)
+
+        if (damage != null)
         {
             TakeDamage(damage.GetDamage());
             damage.Hit();
         }
     }
-    
+
     void TakeDamage(int damageGiven)
     {
-        if(gameObject.tag == "Player")
+        if (gameObject.tag == "Player")
         {
             cameraShakeScript.ShakeCamera();
         }
@@ -35,28 +39,25 @@ public class Health : MonoBehaviour
         if (health <= damageGiven)
         {
             health = 0;
-            GetComponent<SpriteRenderer>().enabled = false;
-            GetComponent<PolygonCollider2D>().enabled = false;
-             //GetComponent<Shooter>().isFiring = false;
-            //GetComponent<Shooter>().enabled = false;
-            AudioPlayer player = FindObjectOfType<AudioPlayer>();
-            player.PlaySoundFor("destroy", gameObject.layer);
-            ScoreKeeper scoreKeeper = FindObjectOfType<ScoreKeeper>();
-            if(scoreKeeper!=null && tag!="Player")
+            spriteRenderer.enabled = false;
+            polygonCollider.enabled = false;
+            audioPlayer.PlaySoundFor("destroy", gameObject.layer);
+            ScoreKeeper scoreKeeper = ScoreKeeper.Instance;
+            if (scoreKeeper != null && tag != "Player")
             {
                 scoreKeeper.UpdateScore(scoreOnDestroy);
             }
-            
+
             StartCoroutine(DestroyForReal());
         }
-            
+
         else
             health -= damageGiven;
     }
-    
+
     public void PlayEffect()
     {
-        if(particleSystem!=null)
+        if (particleSystem != null)
         {
             ParticleSystem instance = Instantiate(particleSystem, transform.position, Quaternion.identity);
             Destroy(instance.gameObject, instance.main.duration);
@@ -66,9 +67,7 @@ public class Health : MonoBehaviour
     IEnumerator DestroyForReal()
     {
         yield return new WaitForSeconds(2);
-        //FindObjectOfType<SceneNavigation>().ChangeScene(2);
-        //yield return new WaitForSeconds(1);
-        Destroy(gameObject,1);
+        Destroy(gameObject, 1);
     }
 
 

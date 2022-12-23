@@ -9,7 +9,7 @@ public class SceneNavigation : MonoBehaviour
     {
         AudioSource.PlayClipAtPoint(buttonSound, Camera.main.transform.position);
         StartCoroutine(LoadAfterSound(n));
-        
+
     }
 
     IEnumerator LoadAfterSound(int n)

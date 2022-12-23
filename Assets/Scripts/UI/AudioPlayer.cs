@@ -1,36 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioPlayer : MonoBehaviour
+public class AudioPlayer : GenericSingleton<AudioPlayer>
 {
-    
     [Header("Shooting")]
-    [SerializeField] AudioClip enemyShootSound;
-    [SerializeField] AudioClip playerShootSound;
-    [SerializeField] [Range(0f, 1f)] float shootVolume= 1f;
+    [SerializeField] private AudioClip enemyShootSound;
+    [SerializeField] private AudioClip playerShootSound;
+    [SerializeField] [Range(0f, 1f)] private float shootVolume= 1f;
 
     [Header("Destroy Sounds")]
-    [SerializeField] AudioClip playerDestroySound;
-    [SerializeField][Range(0f, 1f)] float playerDestroyVolume=1f;
+    [SerializeField] private AudioClip playerDestroySound;
+    [SerializeField][Range(0f, 1f)] private float playerDestroyVolume=1f;
 
-    [SerializeField] AudioClip enemyDestroySound;
-    [SerializeField][Range(0f, 1f)] float enemyDestroyVolume=1f;
-
-
-
-    private void Awake()
-    {
-        int countOfInstances = FindObjectsOfType<AudioPlayer>().Length;
-        if(countOfInstances>1)
-        {
-            GetComponent<AudioPlayer>().enabled = false;
-            Destroy(gameObject);
-        }
-        else
-            DontDestroyOnLoad(gameObject);
-    }
-
+    [SerializeField] private AudioClip enemyDestroySound;
+    [SerializeField][Range(0f, 1f)] private float enemyDestroyVolume=1f;
 
     //7 -Player and 8-Enemy   --> Layer with name and index
     public void PlaySoundFor(string divider, int s)
