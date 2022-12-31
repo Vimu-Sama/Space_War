@@ -22,7 +22,7 @@ The Game follows simple rule of "Shoot and Dodge", where you make your way throu
 
 ## Author
 
-Name- Vimarsh Sharma
+Name- Vimarsh Sharma<br>
 E-mail- vimarshsharmabsr2000@gmail.com
 
 ## License
