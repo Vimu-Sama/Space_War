@@ -13,6 +13,11 @@ Game Concepts Used- <br>
 
 ## Getting Started
 
+### Play Here
+
+ The link for the Game on sharemygame.com->
+ https://sharemygame.com/@Vimu/space-wars
+ 
 ### Dependencies
 
 * Unity 2021.2.7f1
