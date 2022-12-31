@@ -2,7 +2,7 @@
 
 ## Description
 
-![alt text](https://github.com/Vimu-Sama/Space_War/blob/main/SpaceWars.jpg?raw=true)
+![alt text](https://github.com/Vimu-Sama/Space_War/blob/main/Assets/Readme_Image/SpaceWars.JPG?raw=true)
 
 A simple 2-D infinite Space shooter, made with Unity.
 The Game follows simple rule of "Shoot and Dodge", where you make your way through waves of enemies, to get the highest score possible !
