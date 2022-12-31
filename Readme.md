@@ -1,11 +1,15 @@
-# Project Title
-
-Space Wars!!
+# Space Wars!!
 
 ## Description
 
+![alt text](https://github.com/Vimu-Sama/Space_War/blob/main/SpaceWars.jpg?raw=true)
+
 A simple 2-D infinite Space shooter, made with Unity.
 The Game follows simple rule of "Shoot and Dodge", where you make your way through waves of enemies, to get the highest score possible !
+Game Concepts Used- 
+1)- Using waypoints to traverse enemy.
+2)- Using Scriptable objects.
+3)- Using Generic Singleton Pattern for some GameObjects(wherever required)
 
 ## Getting Started
 
